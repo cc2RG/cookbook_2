@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :recipies
+  has_many :recipes
 end

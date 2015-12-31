@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.create(recipe_params)
-    category = Team.find(params["player"] ["category_id"].to_i)
+    category = Recipe.find(params["recipe"] ["category_id"].to_i)
     category.recipes << recipe
     redirect_to(recipes_path)
   end  
@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 
   def update
     recipe = Recipe.create(recipe_params)
-    category = Team.find(params["player"] ["category_id"].to_i)
+    category = Recipe.find(params["recipe"] ["category_id"].to_i)
     category.recipes << recipe
     redirect_to(recipes_path)
   end  
