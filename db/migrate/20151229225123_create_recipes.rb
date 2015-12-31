@@ -3,9 +3,9 @@ class CreateRecipes < ActiveRecord::Migration
     create_table :recipes do |t|
       t.string :name
       t.string :image
-      t.string :category
       t.text :description
       t.text :instruction
+      t.integer :category_id
       t.timestamps null: false
     end
   end
