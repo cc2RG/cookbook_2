@@ -5,4 +5,4 @@
   <%= @ingredient.recipes.map {|r| r.name}.sort.join(',') %>
 </p>
 <%= button_to("Delete Ingredient" , ingredient_path(@ingredient), method: :delete, data: {confirm: 'Delete? Are you sure?'})%>
-<%= link_to("Rename Ingredient", edit_ingredient_path(@ingredient))%>
+<%= link_to("Edit Ingredient", edit_ingredient_path(@ingredient))%>
