@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.create(recipe_params)
-    category = Recipe.find(params["recipe"] ["category_id"].to_i)
+    category = Category.find(params["recipe"] ["category_id"].to_i)
     category.recipes << recipe
     redirect_to(recipes_path)
   end  
@@ -25,10 +25,12 @@ class RecipesController < ApplicationController
   end
 
   def update
-    recipe = Recipe.create(recipe_params)
-    category = Recipe.find(params["recipe"] ["category_id"].to_i)
-    category.recipes << recipe
-    redirect_to(recipes_path)
+    @recipe = Recipe.find(params[:id])
+      if @recipe.update(recipe_params)
+        redirect_to @recipe
+      else
+        render 'edit'
+      end    
   end  
 
   def show
@@ -38,7 +40,7 @@ class RecipesController < ApplicationController
   def destroy
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    redirect_to( recipes_path )
+    redirect_to(recipes_path)
   end
 
 

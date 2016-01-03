@@ -1,0 +1,8 @@
+<h1> Hello </h1>
+<%= link_to("New Category", new_category_path)%>
+<br>
+<% @categories.each do |category|%>
+  <%= category.name %>
+  <%= link_to("Recipes", category_path(category)) %>
+<br>
+<% end %>
