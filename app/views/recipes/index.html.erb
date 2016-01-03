@@ -4,7 +4,10 @@
 <% @recipes.each do |recipe| %>
   <%= recipe.name %>
   <%= recipe.description %>
+  <%= recipe.ingredients.map {|r| r.name}.join(',') %>
   <%= link_to("View full recipe", recipe_path(recipe)) %>
-
+  
+<td> </td>
 <br>
 <% end %>
+

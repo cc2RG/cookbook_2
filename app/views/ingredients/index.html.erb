@@ -1,5 +1,9 @@
+<h1>Ingredients</h1>
 <br>
-<% ingredients.each do |ingredient| %>
+<% @ingredients.each do |ingredient| %>
   <%= ingredient.name %>
+  <% ingredient.recipes.map {|i| i.name}.join(',') %>
 <br>
 <% end %>  
+
+

@@ -1,1 +1,6 @@
 <%= @ingredient.name %>
+
+<p>
+  <strong>Recipes:</strong>
+  <%= @ingredient.recipes.map {|r| r.name}.join(',') %>
+</p>
