@@ -2,15 +2,17 @@
 <br>
 <p> <%= @recipe.description %> </p>
 <br>
-<p> <%= @recipe.image %> </p>
-<br>
-<p> <%= @recipe.instruction %> </p>
-
 <p>
   <ul>
   <strong>Ingredients:</strong>
-  <%= @recipe.ingredients.map {|i| i.name}.join(',') %>
+  <li> <%= @recipe.ingredients.map {|i| i.name}.join(',') %> </li>
   </ul>
 </p>
+<br>
+<p> <%= image_tag @recipe.image %> </p>
+<br>
+<p> <%= @recipe.instruction %> </p>
+
+
 <%= button_to('Delete Recipe', recipe_path(@recipe), method: :delete, data: {confirm: 'Delete? Are you sure?'}) %>
 <%= link_to('Edit Recipe', edit_recipe_path(@recipe)) %>
