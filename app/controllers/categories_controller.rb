@@ -29,6 +29,7 @@ end
 
 def show
   @category = Category.find(params[:id])
+  @recipes = @category.recipes
 end  
 
 def destroy

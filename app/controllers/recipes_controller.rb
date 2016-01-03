@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @category = Category.all
+    @ingredients = Ingredient.all
   end
 
   def create
@@ -22,6 +23,7 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
     @category = Category.all
+    @ingredients = Ingredient.all
   end
 
   def update

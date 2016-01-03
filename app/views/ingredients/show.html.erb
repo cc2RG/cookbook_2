@@ -2,5 +2,5 @@
 
 <p>
   <strong>Recipes:</strong>
-  <%= @ingredient.recipes.map {|r| r.name}.join(',') %>
+  <%= @ingredient.recipes.map {|r| r.name}.sort.join(',') %>
 </p>

@@ -1,9 +1,9 @@
 <h1>Ingredients</h1>
 <br>
 <% @ingredients.each do |ingredient| %>
-  <%= ingredient.name %>
+  <%= link_to("#{ingredient.name}", ingredient_path(ingredient)) %>
   <% ingredient.recipes.map {|i| i.name}.join(',') %>
 <br>
 <% end %>  
-
-
+<br>
+<%= link_to("Add New Ingredient", new_ingredient_path) %>

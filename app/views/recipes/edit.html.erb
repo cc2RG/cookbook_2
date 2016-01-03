@@ -15,6 +15,9 @@
   <%= f.label :instruction %>
   <%= f.text_field :instruction %>
   <br>
+  <div class="field">
+  <%= collection_check_boxes(:recipe, :ingredient_ids, @ingredients, :id, :name) %>
+</div>
   <%= f.submit 'Save Changes' %>
 
 

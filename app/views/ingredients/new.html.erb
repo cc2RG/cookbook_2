@@ -2,7 +2,8 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 <div class="field">
-  <%= collection_check_boxes(:ingredient, :recipe_ids, @Recipes, :id, :name) %>                            
+  <%= collection_check_boxes(:ingredient, :recipe_ids, @recipes, :id, :name) %>                            
 </div>
+
 <%= f.submit 'New Ingredient' %>
 <%end%>  

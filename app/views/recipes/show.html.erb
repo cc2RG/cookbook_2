@@ -7,8 +7,10 @@
 <p> <%= @recipe.instruction %> </p>
 
 <p>
+  <ul>
   <strong>Ingredients:</strong>
   <%= @recipe.ingredients.map {|i| i.name}.join(',') %>
+  </ul>
 </p>
 <%= button_to('Delete Recipe', recipe_path(@recipe), method: :delete, data: {confirm: 'Delete? Are you sure?'}) %>
 <%= link_to('Edit Recipe', edit_recipe_path(@recipe)) %>
