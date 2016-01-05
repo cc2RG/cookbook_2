@@ -40,7 +40,7 @@ end
 private
 
 def ingredient_params
-  params.require(:ingredient).permit(:name, :recipe_ids => [])
+  params.require(:ingredient).permit(:name, :quantities, :recipe_ids => [])
 end  
 
 
